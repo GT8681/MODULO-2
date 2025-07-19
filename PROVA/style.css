@@ -55,33 +55,134 @@ nav ul li {
     padding: 11px 22px;
     font-size: 18px;
 }
-header img{
+
+header img {
     width: 100%;
     margin-top: 50px;
+
+
 }
-header{
+
+header {
     position: relative;
 }
-.slogan-conteiner{
+
+.slogan-conteiner {
     position: absolute;
     background-color: #221e1f;
-    top: 50%;
+    top: 15%;
     left: 50%;
     min-width: 700px;
-    padding: 40px 90px;
-    transform: translate(-50%,50%);
+    padding: 60px 120px;
+    transform: translate(-50%, 50%);
     text-align: center;
     width: 100%;
     max-width: 700px;
 }
-.slogan-title{
+
+.slogan-title {
     color: white;
     font-weight: 900;
     font-size: 40px;
     text-align: center;
 }
-.slogan-p{
+
+.slogan-p {
     color: #d52349;
     font-weight: 300;
     font-size: 20px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 300px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+}
+.cards .card.card:nth-child(2)::before
+{
+content: "";
+position: absolute;
+top: 0;
+bottom: 0%;
+left: 0%;
+width: 10px;
+background-color: rgb(0,0,0,0.2);
+filter: blur(4px);
+
+}
+
+
+
+.cards .card.card:nth-child(2)::after
+{
+content: "";
+position: absolute;
+top: 0;
+bottom: 0%;
+right: 0%;
+width: 10px;
+background-color: rgb(0,0,0,0.2);
+filter: blur(4px);
+
+}
+
+
+
+.card-icon {
+    background-color: #d52349;
+    width: 150px;
+    height: 120px;
+    position: relative;
+    margin: 60px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+}
+
+.card-icon::after {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    bottom: -49px;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-top: 50px solid #d52349;
+
+}
+
+.cards .card:nth-child(2) .card-icon {
+    background-color: #252122;
+}
+
+.cards .card:nth-child(2) .card-icon::after {
+    border-top: 50px solid #252122;
+}
+
+
+.cards .card:nth-child(3) .card-icon {
+    background-color: #827a7c;
+}
+
+.cards .card:nth-child(3) .card-icon::after {
+    border-top: 50px solid #827a7c;
+}
+
+.card-descrition {
+    text-align: center;
+    font-weight: 300;
+    color: #5d5d5d;
 }
