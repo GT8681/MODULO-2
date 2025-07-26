@@ -20,20 +20,76 @@ const marco = {
   name: "Marco",
   lastName: "Rossi",
   isAmbassador: true,
+  price: [100, 5, 1],
 }
 
 const paul = {
   name: "Paul",
   lastName: "Flynn",
   isAmbassador: false,
+  price: [10, 5, 6],
 }
 
 const amy = {
   name: "Amy",
   lastName: "Reed",
   isAmbassador: false,
+  price: [100, 5, 5],
 }
 
 const prices = [34, 5, 2]
 const shippingCost = 50
 let utenteCheEffettuaLAcquisto = amy //cambia il valore qui per provare se il tuo algoritmo funziona!
+
+const users = [];
+users.push(marco, paul, amy);
+
+//console.log(users);
+
+
+/*for(let i = 0; i < users.length; i++) {
+  const user = users[i];
+  if(user.isAmbassador) {
+    console.log(`${user.name} ${user.lastName} e' un ambassador`);
+  } else {
+    console.log(`${user.name} ${user.lastName} non e' un ambassador`);
+  }
+}
+  */
+
+
+
+let total = 0;
+
+for (let i = 0; i < users.length; i++) {
+  const element = users[i];
+  const array = [];
+
+  array.push(element);
+  total = users[i].price.reduce((acc, current) => acc + current, 0);
+  const discount = (total * 30) / 100;
+  const totalWithDiscount = total - discount;
+  const totDiscount = totalWithDiscount + shippingCost;
+  const totalWithShipping = total + shippingCost;
+
+  if ((element.isAmbassador === true) && (total > 100)) {
+
+    console.log(`Il totale scontato per ${element.name} ${element.lastName} e': ${totalWithDiscount}`);
+  }
+  else if ((element.isAmbassador === false) && (total > 100)) {
+
+    console.log(`Il totale per ${element.name} ${element.lastName} e': ${total}`);
+  }
+  else if(element.isAmbassador === false){
+
+       console.log(`il totale del carrello di ${element.name} ${element.lastName} è : ${totalWithShipping }`);
+
+  }
+  else {
+    console.log(`Il totale scontato per ${element.name} ${element.lastName} e': ${totDiscount}`);
+  }
+
+
+
+}
+
